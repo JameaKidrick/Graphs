@@ -80,9 +80,6 @@ class Graph:
         ss = Stack()
         # push STARTING VERTEX
         ss.push([starting_vertex])
-        # DEBUGGER
-        # test = 'hello'
-        # breakpoint()
         # CREATE A SET OF TRAVERSED VERTICES
         visited = set()
         # WHILE STACK IS NOT EMPTY:
@@ -102,7 +99,7 @@ class Graph:
                     ss.push(new_path)
 
 # ALL TESTS PASSED
-    def dft_recursive(self, starting_vertex, visited = set()):
+    def dft_recursive(self, starting_vertex, visited = None):
         """
         Print each vertex in depth-first order
         beginning from starting_vertex.
@@ -115,6 +112,9 @@ class Graph:
         # BASE CASE: IF STARTING VERTEX IS NONE THEN STOP RECURSION
         if starting_vertex is None:
             return
+        # INITIALIZE VISITED
+        if visited is None:
+            visited = set()
         # IF THE STARTING VERTEX HAS NOT ALREADY BEEN VISITED
         if starting_vertex not in visited:
             # WHILE THE STACK HAS AT LEAST ONE ELEMENT
@@ -204,7 +204,7 @@ class Graph:
 
         This should be done using recursion.
         """
-                # INITIATE STACK WITH THE FIRST VERTEX
+        # INITIATE STACK WITH THE FIRST VERTEX
         ss = Stack()
         ss.push([starting_vertex])
         # BASE CASE: IF STARTING VERTEX IS NONE THEN STOP RECURSION
@@ -229,7 +229,7 @@ class Graph:
                         new_path.append(next_vertex)
                         ss.push(new_path)
                         # RECURSE WITH LAST ELEMENT AND OUR VISITED SET
-                        self.dft_recursive(path[-1], visited)
+                        self.dfs_recursive(path[-1], visited)
 
 if __name__ == '__main__':
     graph = Graph()  # Instantiate your graph
