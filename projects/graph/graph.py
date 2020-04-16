@@ -152,7 +152,7 @@ class Graph:
         while qq.size() > 0:
             # DEQUEUE THE FIRST VERTEX
             path = qq.dequeue()
-            # IF THE LAST ELEMENT OF THE PATH IS OUR DESTINCATION VERTEX, RETURN
+            # IF THE LAST ELEMENT OF THE PATH IS OUR DESTINATION VERTEX, RETURN
             if path[-1] == destination_vertex:
                 return path
             # IF NOT VISITED:

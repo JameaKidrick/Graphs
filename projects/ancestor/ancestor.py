@@ -1,17 +1,18 @@
-from projects.graph.util import Queue
+# from projects.graph.util import Queue
+# from projects.graph.graph import Graph
 
-# class Queue():
-#     def __init__(self):
-#         self.queue = []
-#     def enqueue(self, value):
-#         self.queue.append(value)
-#     def dequeue(self):
-#         if self.size() > 0:
-#             return self.queue.pop(0)
-#         else:
-#             return None
-#     def size(self):
-#         return len(self.queue)
+class Queue():
+    def __init__(self):
+        self.queue = []
+    def enqueue(self, value):
+        self.queue.append(value)
+    def dequeue(self):
+        if self.size() > 0:
+            return self.queue.pop(0)
+        else:
+            return None
+    def size(self):
+        return len(self.queue)
 
 def earliest_ancestor(ancestors, starting_node):
     '''
@@ -21,7 +22,7 @@ def earliest_ancestor(ancestors, starting_node):
     print(children)
     if starting_node not in children:
         return -1
-    # # CREATE A QUEUE
+    # CREATE A QUEUE
     qq = Queue()
     # ENQUEUE STARTING VERTEX
     qq.enqueue([starting_node])
