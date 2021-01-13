@@ -17,6 +17,10 @@ contains a dictionary mapping vertex labels to edges. For example:
 }
 ```
 
+0 --- 1     2
+|
+3
+
 This represents a graph with four vertices and two total (bidirectional) edges.
 The vertex `'2'` has no edges, while `'0'` is connected to both `'1'` and `'3'`.
 
